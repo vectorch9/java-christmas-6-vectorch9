@@ -8,7 +8,8 @@ public enum ExceptionCode {
     ILLEGAL_MENU("유효하지 않은 주문입니다. 다시 입력해 주세요."),
     NEGATIVE_MONEY_AMOUNT("금액은 음수일 수 없습니다."),
     ILLEGAL_PROMOTION_CONDITION("올바르지 않은 이벤트 조건입니다."),
-    ILLEGAL_BENEFIT_STRATEGY("올바르지 않은 이벤트 혜택 전략입니다.");
+    ILLEGAL_BENEFIT_STRATEGY("올바르지 않은 이벤트 혜택 전략입니다."),
+    EXCEED_MAX_TRY("최대 5번만 재시도할 수 있습니다.");
     private final String message;
 
     ExceptionCode(final String message) {
