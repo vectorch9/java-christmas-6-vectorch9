@@ -39,10 +39,7 @@ public class InputView {
             final String input = Console.readLine().trim();
             final Map<String, Integer> result = new HashMap<>();
             final String[] orders = input.split(ORDER_DELIMITER);
-            Arrays.stream(orders).forEach(order -> {
-                final String[] menuAndCount = order.split(MENU_COUNT_DELIMITER);
-                result.put(menuAndCount[0], Integer.parseInt(menuAndCount[1]));
-            });
+            Arrays.stream(orders).forEach(order -> addToResult(order, result));
             System.out.println(MENU_FOOTER);
             return result;
         } catch (final RuntimeException e) {
@@ -50,4 +47,11 @@ public class InputView {
         }
     }
 
+    private void addToResult(final String order, final Map<String, Integer> result) {
+        final String[] menuAndCount = order.split(MENU_COUNT_DELIMITER);
+        if (result.containsKey(menuAndCount[0])) {
+            throw new IllegalMenuException();
+        }
+        result.put(menuAndCount[0], Integer.parseInt(menuAndCount[1]));
+    }
 }
