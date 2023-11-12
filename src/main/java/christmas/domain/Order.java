@@ -77,8 +77,7 @@ public class Order {
         return menus.entrySet().stream().mapToInt(e -> getCountAfterComparingCategory(category, e)).sum();
     }
 
-    private static int getCountAfterComparingCategory(final MenuCategory category,
-            final Entry<Menu, Integer> e) {
+    private int getCountAfterComparingCategory(final MenuCategory category, final Entry<Menu, Integer> e) {
         if (e.getKey().compareCategory(category)) {
             return e.getValue();
         }
