@@ -5,7 +5,6 @@ import christmas.domain.Order;
 import christmas.domain.benefit.Benefit;
 import christmas.domain.benefit.DiscountBenefit;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class TemporalDiscountPromotion extends Promotion {
 

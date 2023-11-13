@@ -2,7 +2,6 @@ package christmas.domain.promotion;
 
 import christmas.domain.Order;
 import java.util.Objects;
-import java.util.function.Predicate;
 
 @FunctionalInterface
 public interface PromotionCondition {
